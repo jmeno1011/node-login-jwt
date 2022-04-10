@@ -5,7 +5,7 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 const helmet = require("helmet");
 const morgan = require("morgan");
-
+const PORT = 8000;
 const { corsOption } = require("./utils/options");
 
 app.use(helmet());
