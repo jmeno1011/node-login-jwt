@@ -17,4 +17,8 @@ app.use(session(sessionOption));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send("<h1>home!</h1>");
+});
+
 app.listen(PORT, () => console.log(`${PORT}에 연결됨`));
