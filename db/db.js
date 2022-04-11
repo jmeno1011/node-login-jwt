@@ -1,9 +1,11 @@
 const mysql = require("mysql");
-const { db_config } = require("./db_config");
+const { db_config, db_url } = require("./db_config");
+
 let db;
 
 function handleDisconnect() {
-  db = mysql.createConnection(db_config);
+  // db = mysql.createConnection(db_config);
+  db = mysql.createConnection(db_url.url);
 
   db.connect(function (err) {
     if (err) {
