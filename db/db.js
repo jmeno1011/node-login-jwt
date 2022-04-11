@@ -1,4 +1,5 @@
 const mysql = require("mysql");
+const { db_config } = require("./db_config");
 let db;
 
 function handleDisconnect() {

@@ -15,3 +15,5 @@ router.get("/test", (req, res) => {
     res.status(200).json({ table: result });
   });
 });
+
+module.exports = router;
