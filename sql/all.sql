@@ -8,5 +8,8 @@ ALTER TABLE 테이블명 MODIFY COLUMN 컬럼명 자료형 AFTER 다른컬럼;
 ALTER TABLE userTable MODIFY COLUMN user_id character(25) AFTER seq;
 
 -- 컬럼 자료형 변경
-ALTER TABLE 테이블명 CHANGE 컬럼명 컬럼명 새자료형
-ALTER TABLE userTable CHANGE user_id user_id varchar(25) not null
+ALTER TABLE 테이블명 CHANGE 컬럼명 컬럼명 새자료형;
+ALTER TABLE userTable CHANGE user_id user_id varchar(25) not null;
+ALTER TABLE userTable CHANGE user_pw user_pw varchar(255) not null;
+ALTER TABLE userTable CHANGE email email varchar(100) not null;
+ALTER TABLE userTable CHANGE name name varchar(50) not null;
