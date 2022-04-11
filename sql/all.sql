@@ -13,3 +13,13 @@ ALTER TABLE userTable CHANGE user_id user_id varchar(25) not null;
 ALTER TABLE userTable CHANGE user_pw user_pw varchar(255) not null;
 ALTER TABLE userTable CHANGE email email varchar(100) not null;
 ALTER TABLE userTable CHANGE name name varchar(50) not null;
+
+-- 발생 에러
+-- code: 'ER_NOT_SUPPORTED_AUTH_MODE',
+-- errno: 1251,
+-- sqlMessage: 'Client does not support authentication protocol requested by server; consider upgrading MySQL client',
+-- sqlState: '08004',
+-- 아래 해결 코드
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '비밀번호';
+-- user 설정 보기
+SELECT Host,User,plugin,authentication_string FROM mysql.user;
