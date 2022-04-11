@@ -1,7 +1,7 @@
 exports.corsOption = {
   origin: [
     // aws server
-    // "https://yourapp.amplifyapp.com",
+    `${process.env.AWS_ORIGIN_URL}`,
     // local
     "http://localhost:3000",
   ],
