@@ -5,7 +5,7 @@ exports.db_config = {
   database: process.env.DB_DATABASE,
   port: process.env.DB_PORT,
 };
-// DB_URL=mysql://${{ DB_USER }}:${{ DB_PASSWORD }}@${{ DB_HOST }}:${{ DB_PORT }}/${{ DB_DATABASE }}
+// DB_URL=mysql://${{ process.env.DB_USER }}:${{ process.env.DB_PASSWORD }}@${{ process.env.DB_HOST }}:${{ process.env.DB_PORT }}/${{ process.env.DB_DATABASE }}
 exports.db_url = {
   url: process.env.DB_URL,
 };

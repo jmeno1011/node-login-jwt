@@ -5,7 +5,7 @@ let db;
 
 function handleDisconnect() {
   // db = mysql.createConnection(db_config);
-  db = mysql.createConnection(db_url.url);
+  db = mysql.createConnection(`${db_url.url}`);
 
   db.connect(function (err) {
     if (err) {
