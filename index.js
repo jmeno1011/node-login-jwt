@@ -7,6 +7,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const PORT = process.env.PORT || 8000;
 const home = require("./routers/home.js");
+const user = require("./routers/account.js");
 const { corsOption, sessionOption } = require("./utils/options");
 
 app.use(helmet());
@@ -23,5 +24,6 @@ app.get("/", (req, res) => {
 });
 
 app.use("/home", home);
+app.use("/user", user);
 
 app.listen(PORT, () => console.log(`${PORT}에 연결됨`));
