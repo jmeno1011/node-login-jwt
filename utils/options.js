@@ -6,7 +6,7 @@ exports.corsOption = {
     "http://localhost:3000",
   ],
   credentials: true,
-  methods: "PUT, GET, POST, DELETE, OPTIONS",
+  methods: "PUT, GET, POST, DELETE",
 };
 
 exports.sessionOption = {
