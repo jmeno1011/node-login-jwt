@@ -11,3 +11,5 @@ router.get("/", (req, res) => {
     res.status(200).json({ pokemon: result });
   });
 });
+
+module.exports = router;
