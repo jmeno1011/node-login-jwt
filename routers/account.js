@@ -8,7 +8,7 @@ router.post("/login", (req, res) => {
   const { user_id, user_pw } = req.body;
   console.log("user_id::", user_id);
   console.log("user_pw::", user_pw);
-  const userId = `select user_id from userTable where user_id='${user_id}'`;
+  const userId = `select user_id from person where user_id='${user_id}'`;
   db.query(userId, (err, result) => {
     if (err) {
       console.log(`Error발생 시간::${new Date()}::${err}`);
@@ -16,7 +16,9 @@ router.post("/login", (req, res) => {
     console.log(result);
     let accessToken = generateAccessToken(user_id);
     let refreshToken = generateRefreshToken(user_id);
-    res.status(200).json({ userId: result[0].user_id, ac: accessToken, rf:refreshToken });
+    res
+      .status(200)
+      .json({ userId: result[0].user_id, ac: accessToken, rf: refreshToken });
   });
 });
 

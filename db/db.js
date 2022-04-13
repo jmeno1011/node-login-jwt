@@ -4,8 +4,8 @@ const { db_config, db_url } = require("./db_config");
 let db;
 
 function handleDisconnect() {
-  // db = mysql.createConnection(db_config);
-  db = mysql.createConnection(`${process.env.DB_URL}`);
+  db = mysql.createConnection(db_config);
+  // db = mysql.createConnection(`${process.env.DB_URL}`);
 
   db.connect(function (err) {
     if (err) {
