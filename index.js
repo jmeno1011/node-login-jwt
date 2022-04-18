@@ -14,7 +14,8 @@ const { corsOption, sessionOption } = require("./utils/options");
 app.use(helmet());
 app.use(morgan("dev"));
 
-app.use(cors(corsOption));
+// app.use(cors(corsOption));
+app.use(cors());
 app.use(session(sessionOption));
 
 app.use(bodyParser.urlencoded({ extended: false }));
