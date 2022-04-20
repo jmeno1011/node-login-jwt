@@ -10,8 +10,9 @@ router.get("/", (req, res) => {
 
 // router.get("/test", authenticateAccessToken, (req, res) => {
 router.get("/test", (req, res) => {
-  const userTable = "select * from userTable";
-  pool.query(userTable, (err, result) => {
+  // const userTable = "select * from userTable";
+  const confirmTable = "SELECT * FROM barchart;";
+  pool.query(confirmTable, (err, result) => {
     if (err) {
       console.log(`Error발생 시간::${new Date()}::${err}`);
     }
