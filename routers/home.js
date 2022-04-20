@@ -1,4 +1,5 @@
 const express = require("express");
+const { pool } = require("../db/db");
 const db = require("../db/db");
 const { authenticateAccessToken } = require("../jwt/jwt");
 const router = express.Router();
@@ -10,7 +11,7 @@ router.get("/", (req, res) => {
 // router.get("/test", authenticateAccessToken, (req, res) => {
 router.get("/test", (req, res) => {
   const userTable = "select * from userTable";
-  db.query(userTable, (err, result) => {
+  pool.query(userTable, (err, result) => {
     if (err) {
       console.log(`Error발생 시간::${new Date()}::${err}`);
     }
