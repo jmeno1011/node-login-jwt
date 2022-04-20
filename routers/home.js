@@ -7,7 +7,8 @@ router.get("/", (req, res) => {
   res.send("<h1>home 입니다.</h1>");
 });
 
-router.get("/test", authenticateAccessToken, (req, res) => {
+// router.get("/test", authenticateAccessToken, (req, res) => {
+router.get("/test", (req, res) => {
   const userTable = "select * from userTable";
   db.query(userTable, (err, result) => {
     if (err) {
