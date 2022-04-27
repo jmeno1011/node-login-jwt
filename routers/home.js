@@ -20,4 +20,15 @@ router.get("/test", (req, res) => {
   });
 });
 
+router.get("/test/:state", (req, res) => {
+  const state = req.params.state;
+  const stateData = `SELECT * FROM barchart where state='${state}';`;
+  pool.query(stateData, (err, result) => {
+    if (err) {
+      console.log(`Error발생 시간::${new Date()}::${err}`);
+    }
+    res.status(200).json({ table: result });
+  });
+});
+
 module.exports = router;

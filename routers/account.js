@@ -1,4 +1,5 @@
 const express = require("express");
+const { pool } = require("../db/db");
 const db = require("../db/db");
 const { generateAccessToken, generateRefreshToken } = require("../jwt/jwt");
 const router = express.Router();
@@ -9,7 +10,7 @@ router.post("/login", (req, res) => {
   console.log("user_id::", user_id);
   console.log("user_pw::", user_pw);
   const userId = `select user_id from person where user_id='${user_id}'`;
-  db.query(userId, (err, result) => {
+  pool.query(userId, (err, result) => {
     if (err) {
       console.log(`Error발생 시간::${new Date()}::${err}`);
     }
